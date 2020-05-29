@@ -68,10 +68,22 @@ endif;
              
               <!-- menu category for desktop -->
               <div class="categories-dynamique__list">
-                <a class="categories-dynamique__list-one" href="#"></i>Sport</a>
-                <a class="categories-dynamique__list-two" href="#"></i>Marketing</a>
-                <a class="categories-dynamique__list-three" href="#"></i>Immobilier</a>
-                <a class="categories-dynamique__list-four" href="#"></i>Informatique</a> 
+              <?php
+
+        $args = [
+          'post_type' => 'categoriedesk'
+        ];
+
+          $wpquerySkills = new WP_Query($args);
+
+          if ($wpquerySkills->have_posts()) : while ($wpquerySkills->have_posts()) : $wpquerySkills->the_post();
+
+              get_template_part('template-parts/home/desktop/categories');
+
+          endwhile;
+          endif;
+
+      ?>
               </div>
               <div class="content__first"></div>
               <div class="categories__button">
