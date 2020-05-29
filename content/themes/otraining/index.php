@@ -1,5 +1,18 @@
 <?php get_header(); ?>
 
+
+<?php
+
+if (have_posts()) : while (have_posts()) : the_post();
+
+        get_template_part('template-parts/home/banner');
+
+    endwhile;
+endif;
+
+?>
+
+
     <main>
 
       <!-- catégory : Formation les plus populaires -->
@@ -29,21 +42,30 @@ endif;
           </div>
         </div>
       </section>
-      <!-- menu des catégories -->
+      <!-- menu des catégories for mobile-->
       <section class="categories">
-              <h2 class="categories__title"><i class="fa fa-archive" aria-hidden="true"></i>Catégories</h2>
-              <div class="categories__list">
-                <ul>
-                  <li><a href="#"><i class="fa fa-futbol-o" aria-hidden="true"></i>Sport</a></li>
-                  <li><a href="#"><i class="fa fa-bar-chart" aria-hidden="true"></i>Marketing</a></li>
-                  <li><a href="#"><i class="fa fa-building-o" aria-hidden="true"></i>Immobilier</a></li>
-                  <li><a href="#"><i class="fa fa-laptop" aria-hidden="true"></i>Informatique</a></li>
-                  <li><a href="#"><i class="fa fa-paint-brush" aria-hidden="true"></i>Art</a></li>
-                  <li><a href="#"><i class="fa fa-music" aria-hidden="true"></i>Musique</a></li>
-                  <li><a href="#"><i class="fa fa-cube" aria-hidden="true"></i>Design</a></li>
-                  <li><a href="#"><i class="fa fa-child" aria-hidden="true"></i>Développment personnel</a></li>
-                </ul>
-              </div>
+      <h2 class="categories__title">Catégories</h2>
+      <div class="categories__list">
+        <ul>
+      <?php
+
+        $args = [
+          'post_type' => 'categorie'
+        ];
+
+          $wpquerySkills = new WP_Query($args);
+
+          if ($wpquerySkills->have_posts()) : while ($wpquerySkills->have_posts()) : $wpquerySkills->the_post();
+
+              get_template_part('template-parts/home/mobile/categories');
+
+          endwhile;
+          endif;
+
+      ?>
+        </ul>
+      </div>
+             
               <!-- menu category for desktop -->
               <div class="categories-dynamique__list">
                 <a class="categories-dynamique__list-one" href="#"></i>Sport</a>

@@ -1,0 +1,4 @@
+// ! Pour que la barre d'admin ne cache plus la navbar
+#wpadminbar {
+    position: inherit !important;
+  }

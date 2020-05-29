@@ -3,16 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <?php wp_head(); ?>
-  <title>O'training</title>
   
 </head>
 <body>
     <header>
       <div class="navbar">
         <div class="navbar__logo">
-          <a href="#">O'training</a>
+          <a href="#"><?= bloginfo('name'); ?></a>
         </div>
         <div class="navbar__formations">
             <a href="#" class="session__log-in"><i class="fa fa-chevron-circle-down" aria-hidden="true"></i>Formations</a>
@@ -51,17 +49,6 @@
         <div class="session">
           <a href="#" class="session__log-in">Connexion</a>
           <a href="#" class="session__sign-up">Inscription</a>
-        </div>
-      </div>
-      <div class="banner">
-        <div class="description">
-          <h1 class="banner__title">Progressez à votre rythme :</h1>
-          <p class="banner__content">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-          <div class="banner__button">
-            <a href="#">
-              <button class="button">Formations gratuites</button>
-            </a>
-          </div>
         </div>
       </div>
     </header>

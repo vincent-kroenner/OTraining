@@ -1,7 +1,7 @@
 <div class="famous-training__single">
 
     <div class="famous-training__single__image">
-        <img src="images/movie.jpg" alt="">
+        <?php the_post_thumbnail(); ?>
     </div>
 
     <h2 class="famous-training__single__title"><?php the_title(); ?></h2>
