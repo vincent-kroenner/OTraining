@@ -1,7 +1,6 @@
 <?php get_header(); ?>
 
     <main>
-
       <!-- catégory : Formation les plus populaires -->
       <section class="slider">
         <div class="famous-training">
@@ -10,25 +9,23 @@
 
           <?php
 
-$args = [
-    'post_type' => 'formation' //mettre training
-];
+            $args = [
+                'post_type' => 'formation' //mettre training
+            ];
 
-$wpqueryTrainings = new WP_Query($args);
+            $wpqueryTrainings = new WP_Query($args);
 
-if ($wpqueryTrainings->have_posts()) : while
-($wpqueryTrainings->have_posts()) : $wpqueryTrainings->the_post();
+            if ($wpqueryTrainings->have_posts()) : while
+            ($wpqueryTrainings->have_posts()) : $wpqueryTrainings->the_post();
 
-    get_template_part('template-parts/training');
+                get_template_part('template-parts/training');
 
-    endwhile;
-endif;
+                endwhile;
+            endif;
 
-?>
+          ?>
 
-          </div>
-        </div>
-      </section>
+
       <!-- menu des catégories -->
       <section class="categories">
               <h2 class="categories__title"><i class="fa fa-archive" aria-hidden="true"></i>Catégories</h2>

@@ -40,10 +40,10 @@ class OFormation
             'labels' => $labels,
             'public' => true,
             'hirerarchical' => false,
-            // pour passer sur Gutenberg :
-            // 'show_in_rest' => true,
-            'exclude_from_search' => true,
-            'menu_position' => 2,
+            //pour passer sur Gutenberg
+            'show_in_rest' => true,
+            'exclude_from_search' => false,
+            'menu_position' => 6,
             'menu_icon' => 'dashicons-book',
             'supports' => [
                 'title',

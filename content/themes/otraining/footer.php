@@ -57,11 +57,12 @@
             <i class="fa fa-linkedin-square" aria-hidden="true"></i>
           </div>
       </div>
-      <?php wp_footer(); ?>
       </section>
     </footer>
     
 
   <script src="js/app.js"></script>
+  <?php wp_footer(); ?>
 </body>
+
 </html>
