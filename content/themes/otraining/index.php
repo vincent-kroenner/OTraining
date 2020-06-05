@@ -7,7 +7,7 @@ endwhile; endif;
 
 
 ?>
-    <main>
+
 
       <!-- catégory : Formation les plus populaires -->
       <section class="slider">

@@ -14,7 +14,6 @@ class OFormation
 {
     public function __construct()
     {
-        add_theme_support( 'post-thumbnails' );
         add_action('init', [$this, 'create_cpt']);
         add_action('init', [$this, 'register_taxonomies']);
     }
@@ -40,18 +39,24 @@ class OFormation
 
         $args = [
             'labels' => $labels,
+            'label' => 'Formation',
             'public' => true,
             'hirerarchical' => false,
             // pour passer sur Gutenberg :
-            // 'show_in_rest' => true,
+            'show_in_rest' => true,
             'exclude_from_search' => true,
             'menu_position' => 2,
             'menu_icon' => 'dashicons-book',
             'supports' => [
                 'title',
                 'editor',
+                'excerpt',
                 'custom-fields',
                 'thumbnail'
+            ],
+            'has_archive' => true,
+            'rewrite' => [
+                'slug' => 'projets'
             ]
         ];
 
@@ -77,20 +82,20 @@ class OFormation
             ]
         );
 
-        register_taxonomy(
-            'tag',
-            'formation',
-            [
-                'label' => 'Tags',
-                'public' => true,
-                'hierarchical' => true,
-                'show_admin_column' => true,
-                'rewrite' => [
-                    'slug' => 'tag'
-                ]
+        // register_taxonomy(
+        //     'tag',
+        //     'formation',
+        //     [
+        //         'label' => 'Tags',
+        //         'public' => true,
+        //         'hierarchical' => true,
+        //         'show_admin_column' => true,
+        //         'rewrite' => [
+        //             'slug' => 'tag'
+        //         ]
 
-            ]
-        );
+        //     ]
+        // );
     }
 
     public function oformation_activate()

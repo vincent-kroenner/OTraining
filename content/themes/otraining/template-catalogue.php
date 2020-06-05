@@ -47,4 +47,7 @@ if ($wpqueryTraining->have_posts()): while ($wpqueryTraining->have_posts()): $wp
     endwhile;
 endif;
 ?>
+
+<?php get_sidebar(); ?>
+
 <?php get_footer(); ?>
