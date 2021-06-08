@@ -79,7 +79,7 @@ let config = {
           }
         },
       },
-                  // Images
+      // Images
       {
         test: /\.(jpg|jpeg|png|gif|svg)$/,
         use: {
@@ -87,7 +87,8 @@ let config = {
           options: {
             name: '[name].[ext]', // Nom du fichier généré
             outputPath: 'images/', // Destination du fichier généré dans le répertoire public
-            publicPath: '../images' // Chemin relatif depuis le fichier CSS vers le dossier des images
+            publicPath: '../images', // Chemin relatif depuis le fichier CSS vers le dossier des images
+            esModule: false
           }
         }
       }

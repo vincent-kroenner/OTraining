@@ -18,7 +18,7 @@
             img{
                 display: block;
                 margin-left: auto;
-                width: 80%;
+                width: 25vw;
                 margin-right: auto;
             }
             // background-image: url('../assets/images/header.jpg');
@@ -73,6 +73,31 @@
     display: none;
 }
 
+.search-container {
+    display: none;
+}
+
+.submit-button {
+    display: none; }
+
+
+.selector__categorie {
+    color: $color2;
+    padding-top: 1rem;
+    padding-left: 1rem;
+    text-transform: uppercase;
+
+}
+.page {
+    width: 100%;
+    margin-top: 1rem;
+    padding: 0.5rem;
+    border: none;
+}
+
+.footer__mobile {
+    margin-top: 3rem;
+}
 
 
 @media (min-width: $breakpoint-medium)
@@ -88,6 +113,13 @@
     }
 
  }
+
+ .page {
+    width: 100%;
+    margin-top: 1rem;
+    padding: 1rem;
+    border: none;
+}
 
  @media (min-width: $breakpoint-large)
  {
@@ -119,6 +151,7 @@
     }
 
     .footer-wrapper {
+        margin-top: 5em;
         padding: 1.5rem 0;
         // border: chocolate solid 2px;
         display: inherit !important;
@@ -135,9 +168,6 @@
         
     }
 
-    .footer__teacher {
-        display: none !important;;
-    }
 
     .footer__menu {
         // border: red solid 2px;
@@ -154,17 +184,18 @@
     }
 
     .footer__end {
+        margin-top: 1rem;
         padding: 1.5rem 0 0 0;
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-around;
+        justify-content: center;
 
 
         &__copy {
             color: $color1;
         }
-        &__social {
-            color: $white;
+        p, a {
+            padding: 0 1rem 0 1rem;
         }
 
     }
@@ -212,7 +243,35 @@
     .categories__list {
         display: none;
     }
+    .categories__title{
+        display: none;
+    }
+    .search-container {
+        display: inherit;
+    }
+
+    .submit-button {
+        display: inline-block;
+    }
+
+    .page {
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+        margin-top: 3rem;
+        padding: 0 4rem 4rem 4rem;
+        border: $white solid 1px;
+        border-radius: 5px;
+      }
+       
+      .footer__mobile {
+        margin-top: 0;
+    }
+
+
  }
+
+
 
 
 
